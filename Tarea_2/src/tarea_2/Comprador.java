@@ -11,9 +11,15 @@ public class Comprador {
         this.m = m;
         this.exp = exp;
         this.numBebida = numBebida;
-        this.vuelto = 0;
-        this.sabor = "";
+        vuelto = 0;
+        sabor = "";
     }
 
-    public
+    public void comprar(){
+        exp.comprarBebida(m,numBebida,);
+    }
+    
+    public void beber(Bebida b){
+        sabor = b.;
+    }
 }
