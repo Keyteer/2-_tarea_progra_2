@@ -4,13 +4,13 @@
  */
 package tarea_2;
 
-public abstract class Bebida {
+public class CanadaDry extends Bebida {
     
-    private int numSerie;
-    
-    public Bebida(int NumSerie){
-        numSerie = NumSerie;
+    public CanadaDry(int serie){
+        super(serie);
     }
-    public abstract String TomarBebida();
-    
+    public String TomarBebida(){
+        
+        return "CanadaDry";        
+    }
 }
