@@ -15,14 +15,14 @@ public class Comprador {
         sabor = "";
     }
 
-    public void comprar(){
+    /*public void comprar(){
         this.beber(exp.comprarBebida(m,numBebida));
         
         while (m != null){
             m = exp.getVuelto();
             vuelto += m.getValor();
         }
-    }
+    }*/
     
     public void beber(Bebida b){
         sabor = b.tomarBebida();

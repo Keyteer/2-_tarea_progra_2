@@ -14,7 +14,10 @@ public class Tarea_2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Expendedor exp = new Expendedor(5,100);
+        
+        Bebida b=exp.getBebida();
+        System.out.println(b.tomarBebida());
     }
     
 }
