@@ -7,6 +7,11 @@ public abstract class Bebida {
     public Bebida(int NumSerie){
         numSerie = NumSerie;
     }
+
+	 public int getNumSerie(){
+		return numSerie;
+	 }
+
     public abstract String tomarBebida();
     
 }
