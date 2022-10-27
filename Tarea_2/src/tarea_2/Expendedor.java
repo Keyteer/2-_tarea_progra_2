@@ -10,6 +10,7 @@ public class Expendedor {
 
     public Expendedor(int cantidadPorDep, int precio) {
         depBebida = new ArrayList[3];
+        depositoMonedas = 0;
         numBebidas = 3*cantidadPorDep;
         for (int i = 0; i < 3; i++) {
             depBebida[i] = new ArrayList<Bebida>();
@@ -41,17 +42,34 @@ public class Expendedor {
         
         if(moneda.getValor()>this.precioBebidas){
             if(n==1){
-                depositoMonedas = moneda.getValor() - precio ;
-                return depBebidas[0].remove();
+                depositoMonedas = moneda.getValor() - this.precioBebidas;
+                return depBebida[0].remove(0);
             }else if(n==2){
-                depositoMonedas = moneda.getValor() - precio ;
-                return depBebidas[0].remove();
+                depositoMonedas = moneda.getValor() - this.precioBebidas;
+                return depBebida[1].remove(0);
             }else if(n==3){
-                depositoMonedas = moneda.getValor() - precio ;
-                return depBebidas[0].remove();
+                depositoMonedas = moneda.getValor() - this.precioBebidas;
+                return depBebida[2].remove(0);
             }
         }else if(moneda.getValor()>this.precioBebidas){
-            
+            if(n==1){
+                depositoMonedas += moneda.getValor();
+                return null;
+            }else if(n==2){
+                depositoMonedas += moneda.getValor();
+                return null;
+            }else if(n==3){
+                depositoMonedas += moneda.getValor();
+                return null;
+            }
+        }else{
+            if(n==1){
+                return depBebida[0].remove(0);
+            }else if(n==2){
+                return depBebida[1].remove(0);
+            }else if(n==3){
+                return depBebida[2].remove(0);
+            }
         }
     }
 
