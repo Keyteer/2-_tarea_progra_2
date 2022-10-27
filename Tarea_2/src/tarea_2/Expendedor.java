@@ -38,36 +38,36 @@ public class Expendedor {
         return depBebida[1].remove(1);
     }
 
-    public Bebida comprarBebida(Moneda moneda,int numBebidas,int n) {
+    public Bebida comprarBebida(Moneda moneda,int numBebidas) {
         
         if(moneda.getValor()>this.precioBebidas){
-            if(n==1){
+            if(numBebidas==1){
                 depositoMonedas = moneda.getValor() - this.precioBebidas;
                 return depBebida[0].remove(0);
-            }else if(n==2){
+            }else if(numBebidas==2){
                 depositoMonedas = moneda.getValor() - this.precioBebidas;
                 return depBebida[1].remove(0);
-            }else if(n==3){
+            }else if(numBebidas==3){
                 depositoMonedas = moneda.getValor() - this.precioBebidas;
                 return depBebida[2].remove(0);
             }
-        }else if(moneda.getValor()>this.precioBebidas){
-            if(n==1){
+        }else if(moneda.getValor()<this.precioBebidas){
+            if(numBebidas==1){
                 depositoMonedas += moneda.getValor();
                 return null;
-            }else if(n==2){
+            }else if(numBebidas==2){
                 depositoMonedas += moneda.getValor();
                 return null;
-            }else if(n==3){
+            }else if(numBebidas==3){
                 depositoMonedas += moneda.getValor();
                 return null;
             }
         }else{
-            if(n==1){
+            if(numBebidas==1){
                 return depBebida[0].remove(0);
-            }else if(n==2){
+            }else if(numBebidas==2){
                 return depBebida[1].remove(0);
-            }else if(n==3){
+            }else if(numBebidas==3){
                 return depBebida[2].remove(0);
             }
         }
