@@ -16,7 +16,7 @@ public class Comprador {
 	}
 
 	public void comprar() {
-		this.beber(exp.comprarBebida(m, numBebida,1));
+		this.beber(exp.comprarBebida(m, numBebida));
 
 		while (true) {
 			m = exp.getVuelto();
