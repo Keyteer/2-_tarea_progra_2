@@ -14,10 +14,7 @@ public class Tarea_2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Expendedor exp = new Expendedor(5,100);
         
-        Bebida b=exp.getBebida();
-        System.out.println(b.tomarBebida());
     }
     
 }

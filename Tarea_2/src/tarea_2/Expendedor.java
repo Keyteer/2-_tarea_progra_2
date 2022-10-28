@@ -4,14 +4,12 @@ import java.util.ArrayList;
 public class Expendedor {
 
     private ArrayList<Bebida>[] depBebida;
-    private int numBebidas;
     private int precioBebidas;
     private int depositoMonedas;
 
     public Expendedor(int cantidadPorDep, int precio) {
         depBebida = new ArrayList[3];
         depositoMonedas = 0;
-        numBebidas = 3*cantidadPorDep;
         for (int i = 0; i < 3; i++) {
             depBebida[i] = new ArrayList<Bebida>();
             for(int j=0;j<cantidadPorDep;j++){
@@ -26,28 +24,21 @@ public class Expendedor {
         }
         precioBebidas = precio;
     }
-
-    /*public int[] getdepBebida() {
-        return depBebida;
-    }*/
-
+    
     public int getPrecioBebidas() {
         return precioBebidas;
     }
-    public Bebida getBebida(){
-        return depBebida[1].remove(1);
-    }
 
-    public Bebida comprarBebida(Moneda moneda,int numBebidas) {
+    public Bebida comprarBebida(Moneda moneda,int numBebida) {
         
         if(moneda.getValor()>this.precioBebidas){
                 depositoMonedas = moneda.getValor() - this.precioBebidas;
-                return depBebida[this.precioBebidas-1].remove(0);
+                return depBebida[numBebida-1].remove(0);
         }else if(moneda.getValor()<this.precioBebidas){
                 depositoMonedas += moneda.getValor();
                 return null;
         }else{
-                return depBebida[this.precioBebidas-1].remove(0);
+                return depBebida[numBebida-1].remove(0);
         }
     }
 
