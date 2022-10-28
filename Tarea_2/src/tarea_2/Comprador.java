@@ -31,6 +31,10 @@ public class Comprador {
 		sabor = b.tomarBebida();
 	}
 
+	public int getVuelto(){
+		return vuelto;
+	}
+
 	public String getSabor(){
 		return sabor;
 	}
