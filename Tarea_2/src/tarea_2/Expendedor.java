@@ -37,17 +37,28 @@ public class Expendedor {
             return null;
         }
         try{
+            if(numBebida<1||numBebida>3){
+                int x = 1/0;
+            }
+        }catch(Exception e){
+            depositoMonedas += moneda.getValor();
+            System.out.println("Error,DepositoInexistenteException");
+            return null;
+        }
+        try{
             if(moneda.getValor()>this.precioBebidas){
                         depositoMonedas = moneda.getValor() - this.precioBebidas;
                         return depBebida[numBebida-1].remove(0);
 
             }else if(moneda.getValor()<this.precioBebidas){
                     depositoMonedas += moneda.getValor();
+                    System.out.println("Error,PagoInsuficienteException");
                     return null;
             }else{
                     return depBebida[numBebida-1].remove(0);
             }
         }catch(Exception e){
+            depositoMonedas = 0;
             depositoMonedas += moneda.getValor();
             System.out.println("Error,NoHayBebidaException");
             return null;

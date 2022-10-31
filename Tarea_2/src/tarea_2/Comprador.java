@@ -20,14 +20,14 @@ public class Comprador {
             try{
                 this.beber(exp.comprarBebida(m, numBebida));
             }catch(Exception e){
-                System.out.println("a");
+                System.out.print("");
             }
             
             while (true) {
                     m = exp.getVuelto();
                     if (m == null)
                             break;
-
+                    
                     vuelto += m.getValor();
 		}
 	}
