@@ -16,14 +16,19 @@ public class Comprador {
 	}
 
 	public void comprar() {
-		this.beber(exp.comprarBebida(m, numBebida));
+            
+            try{
+                this.beber(exp.comprarBebida(m, numBebida));
+            }catch(Exception e){
+                System.out.println("a");
+            }
+            
+            while (true) {
+                    m = exp.getVuelto();
+                    if (m == null)
+                            break;
 
-		while (true) {
-			m = exp.getVuelto();
-			if (m == null)
-				break;
-
-			vuelto += m.getValor();
+                    vuelto += m.getValor();
 		}
 	}
 
