@@ -30,15 +30,27 @@ public class Expendedor {
     }
 
     public Bebida comprarBebida(Moneda moneda,int numBebida) {
-        
-        if(moneda.getValor()>this.precioBebidas){
-                depositoMonedas = moneda.getValor() - this.precioBebidas;
-                return depBebida[numBebida-1].remove(0);
-        }else if(moneda.getValor()<this.precioBebidas){
-                depositoMonedas += moneda.getValor();
-                return null;
-        }else{
-                return depBebida[numBebida-1].remove(0);
+        try{
+            moneda.toString();
+        }catch(Exception e){
+            System.out.println("Error,PagoIncorrectoException");
+            return null;
+        }
+        try{
+            if(moneda.getValor()>this.precioBebidas){
+                        depositoMonedas = moneda.getValor() - this.precioBebidas;
+                        return depBebida[numBebida-1].remove(0);
+
+            }else if(moneda.getValor()<this.precioBebidas){
+                    depositoMonedas += moneda.getValor();
+                    return null;
+            }else{
+                    return depBebida[numBebida-1].remove(0);
+            }
+        }catch(Exception e){
+            depositoMonedas += moneda.getValor();
+            System.out.println("Error,NoHayBebidaException");
+            return null;
         }
     }
 
